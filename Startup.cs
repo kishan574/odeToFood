@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -32,13 +33,22 @@ namespace ode2Food
                 app.UseDeveloperExceptionPage();
             }
 
-            //app.UseDefaultFiles();
-            //app.UseStaticFiles();
+           // app.UseDefaultFiles();
+            app.UseStaticFiles();
 
-            app.UseFileServer();
-            app.UseMvcWithDefaultRoute();
+            //app.UseFileServer();
+            //app.UseMvcWithDefaultRoute();
 
-            //app.UseRouting();
+            app.UseMvc();
+
+            app.UseRouting();
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
+            });
+
             app.Use(next =>
            {
                return async context =>
@@ -68,9 +78,12 @@ namespace ode2Food
             app.Run(async context =>
                {
                    //throw new Exception("Error");
-                   var greeting = $"{greeter.greetingsOfTheDay()} in {env.EnvironmentName}";
-                   await context.Response.WriteAsync(greeting);
+                   //var greeting = $"{greeter.greetingsOfTheDay()} in {env.EnvironmentName}";
+                   context.Response.ContentType = "text/plain";
+                   await context.Response.WriteAsync("Not Found!");
                });
         }
+
+      
     }
 }
