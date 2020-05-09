@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using ode2Food.Models;
 using System;
 using System.Collections.Generic;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ode2Food
 {
-    public class HomeController
+    public class HomeController : Controller
     {
         //public string Index()
         //{
@@ -17,7 +18,8 @@ namespace ode2Food
         public IActionResult Index()
         {
             var model = new Resturant { Id = 1, Name = "Pepe's Pizza" };
-            return new ObjectResult(model);
+            return View(model);
+            //return new ObjectResult(model);
         }
     }
 }
