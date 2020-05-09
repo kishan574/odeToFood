@@ -11,6 +11,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using ode2Food.Models;
+using ode2Food.Services;
 
 namespace ode2Food
 {
@@ -20,8 +22,9 @@ namespace ode2Food
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-                       
+
             services.AddSingleton<IGreeter, Greeter>();
+            services.AddScoped<IResturant, InMemoryResturant>();
             services.AddMvc(options => options.EnableEndpointRouting = false);
         }
 
@@ -33,7 +36,7 @@ namespace ode2Food
                 app.UseDeveloperExceptionPage();
             }
 
-           // app.UseDefaultFiles();
+            // app.UseDefaultFiles();
             app.UseStaticFiles();
 
             //app.UseFileServer();
@@ -84,6 +87,6 @@ namespace ode2Food
                });
         }
 
-      
+
     }
 }

@@ -1,4 +1,4 @@
-﻿@model ode2Food.Models.Resturant
+﻿@model IEnumerable<ode2Food.Models.Resturant>
 
 <html>
 <head>
@@ -8,6 +8,10 @@
 </head>
 
 <body>
-    <h1>@Model.Name is @Model.Id</h1>  
+    @foreach (var m in Model)
+    {
+        <h1>@m.Name is @m.Id</h1>
+
+    }
 </body>
 </html>
