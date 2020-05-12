@@ -26,6 +26,11 @@ namespace ode2Food.Services
             return _resturants;
         }
 
+        public Resturant Get(int id)
+        {
+            return _resturants.FirstOrDefault(x => x.Id == id);
+        }
+
         List<Resturant> _resturants = new List<Resturant>();
 
     }

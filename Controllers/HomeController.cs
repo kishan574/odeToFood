@@ -42,5 +42,13 @@ namespace ode2Food
 
             //return new ObjectResult(model);
         }
+        public IActionResult Details(int id)
+        {
+            var rest = _resturant.Get(id);
+            if (rest == null)
+                return NotFound();
+            else
+                return View(rest);
+        }
     }
 }

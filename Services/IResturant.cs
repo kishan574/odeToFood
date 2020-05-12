@@ -10,5 +10,6 @@ namespace ode2Food.Services
     public interface IResturant
     {
         public IEnumerable<Resturant> GetAll();
+        public Resturant Get(int id);
     }
 }
