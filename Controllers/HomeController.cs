@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc.Rendering;
 using ode2Food.Models;
 using ode2Food.Services;
+using ode2Food.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,10 +12,14 @@ namespace ode2Food
 {
     public class HomeController : Controller
     {
-        private IResturant _resturant { get; set; }
-        public HomeController(IResturant resturant)
+        private IResturant _resturant;
+        private IGreeter _greetre;
+
+        public HomeController(IResturant resturant,
+                              IGreeter greeter)
         {
             _resturant = resturant;
+            _greetre = greeter;
         }
         //public string Index()
         //{
@@ -30,8 +35,11 @@ namespace ode2Food
 
         public IActionResult Index()
         {
-            var model = _resturant.GetAll();
-            return View(model);
+            HomeIndexViewModel homeIndexViewModel = new HomeIndexViewModel();
+            homeIndexViewModel.Resturants = _resturant.GetAll();
+            homeIndexViewModel.Greeter = _greetre.greetingsOfTheDay();
+            return View(homeIndexViewModel);
+
             //return new ObjectResult(model);
         }
     }
