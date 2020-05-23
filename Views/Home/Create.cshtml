@@ -2,10 +2,18 @@
 
 <h1>Create</h1>
 
-<form action="Create" method="post">
-    <input asp-for="Name" />
-    <select asp-for="CusineType" asp-items="@Html.GetEnumSelectList<ode2Food.Models.Cusine>()"></select>
+<div>
+    <form action="Create" method="post">
 
-    <input type="submit" value="Save" name="Save"/>
-</form>
+        <div>
+            <label asp-for="Name"></label>
+            <input asp-for="Name" />
+        </div>
+        <div>
+            <label asp-for="CusineType"></label>
+            <select asp-for="CusineType" asp-items="@Html.GetEnumSelectList<ode2Food.Models.Cusine>()"></select>
+        </div>
+        <input type="submit" value="Save" name="Save" />
+    </form>
+</div>
 
