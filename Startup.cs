@@ -24,7 +24,7 @@ namespace ode2Food
         {
 
             services.AddSingleton<IGreeter, Greeter>();
-            services.AddScoped<IResturant, InMemoryResturant>();
+            services.AddSingleton<IResturant, InMemoryResturant>();
             services.AddMvc(options => options.EnableEndpointRouting = false);
         }
 

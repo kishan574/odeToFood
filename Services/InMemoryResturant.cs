@@ -31,6 +31,14 @@ namespace ode2Food.Services
             return _resturants.FirstOrDefault(x => x.Id == id);
         }
 
+        public Resturant Add(Resturant resturant)
+        {
+            resturant.Id = _resturants.Max(x => x.Id) + 1;
+            _resturants.Add(resturant);
+
+            return resturant;
+        }
+
         List<Resturant> _resturants = new List<Resturant>();
 
     }

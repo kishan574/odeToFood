@@ -6,6 +6,7 @@ using ode2Food.Services;
 using ode2Food.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -61,7 +62,13 @@ namespace ode2Food
         [HttpPost]
         public IActionResult Create(ResturantEditModel resturantEdit)
         {
-            return Content("Post");
+            Resturant newRresturant = new Resturant();
+            newRresturant.Name = resturantEdit.Name;
+            newRresturant.CusineType = resturantEdit.CusineType;
+
+            var a = _resturant.Add(newRresturant);
+
+            return View("Details", a);
         }
     }
 }
