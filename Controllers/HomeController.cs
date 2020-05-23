@@ -60,21 +60,31 @@ namespace ode2Food
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult Create(ResturantEditModel resturantEdit)
         {
-            Resturant newRresturant = new Resturant();
-            newRresturant.Name = resturantEdit.Name;
-            newRresturant.CusineType = resturantEdit.CusineType;
+            if (ModelState.IsValid)
+            {
+                Resturant newRresturant = new Resturant();
+                newRresturant.Name = resturantEdit.Name;
+                newRresturant.CusineType = resturantEdit.CusineType;
 
-            var a = _resturant.Add(newRresturant);
+                var a = _resturant.Add(newRresturant);
 
-            //return View("Details", a); 
-            ////when user decides to refresh the returned view,
-            //the req. rendered will execute a http post req again to the application 
-            //causing redundant data to be saved again.
+                //return View("Details", a); 
+               
+                ////when user decides to refresh the returned view,
+                //the req. rendered will execute a http post req again to the application 
+                //causing redundant data to be saved again.
 
-            //inorder to solve the above mentioned issue we'll return a redirect action insted of a view.
-            return RedirectToAction(nameof(Details), new { a.Id , status = "success" });
+                //inorder to solve the above mentioned 
+                //issue we'll return a redirect action insted of a view.
+                return RedirectToAction(nameof(Details), new { a.Id, status = "success" });
+            }
+            else
+            {
+                return View();
+            }
         }
     }
 }

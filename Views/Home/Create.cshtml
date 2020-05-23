@@ -2,18 +2,24 @@
 
 <h1>Create</h1>
 
+<a asp-action="Index" asp-controller="Home">Back</a>
+
 <div>
     <form action="Create" method="post">
 
         <div>
             <label asp-for="Name"></label>
             <input asp-for="Name" />
+            <span asp-validation-for="Name" style="color:red;"></span>
         </div>
         <div>
             <label asp-for="CusineType"></label>
             <select asp-for="CusineType" asp-items="@Html.GetEnumSelectList<ode2Food.Models.Cusine>()"></select>
+            <span asp-validation-for="CusineType"></span>
         </div>
         <input type="submit" value="Save" name="Save" />
     </form>
 </div>
+
+<a asp-action="Index" asp-controller="Home">Cancel</a>
 
