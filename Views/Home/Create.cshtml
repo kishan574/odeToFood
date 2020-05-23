@@ -1,0 +1,11 @@
+﻿@model ode2Food.Models.Resturant
+
+<h1>Create</h1>
+
+<form action="Create" method="post">
+    <input asp-for="Name" />
+    <select asp-for="CusineType" asp-items="@Html.GetEnumSelectList<ode2Food.Models.Cusine>()"></select>
+
+    <input type="submit" value="Save" name="Save"/>
+</form>
+

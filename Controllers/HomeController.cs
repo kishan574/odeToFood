@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using ode2Food.Models;
 using ode2Food.Services;
@@ -49,6 +50,18 @@ namespace ode2Food
                 return NotFound();
             else
                 return View(rest);
+        }
+
+        [HttpGet]
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Create(ResturantEditModel resturantEdit)
+        {
+            return Content("Post");
         }
     }
 }

@@ -104,3 +104,4 @@ C:\Users\Dell\source\repos\ode2Food\obj\Debug\netcoreapp3.1\ode2Food.csproj.Core
 C:\Users\Dell\source\repos\ode2Food\obj\Debug\netcoreapp3.1\ode2Food.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Dell\source\repos\ode2Food\obj\Debug\netcoreapp3.1\Razor\Views\Home\Details.cshtml.g.cs
 C:\Users\Dell\source\repos\ode2Food\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
+C:\Users\Dell\source\repos\ode2Food\obj\Debug\netcoreapp3.1\Razor\Views\Home\Create.cshtml.g.cs
