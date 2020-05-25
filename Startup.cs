@@ -11,19 +11,29 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using ode2Food.DataConfiguration;
 using ode2Food.Models;
 using ode2Food.Services;
+using Microsoft.EntityFrameworkCore;
 
 namespace ode2Food
 {
     public class Startup
     {
+        private IConfiguration _configuration;
+
+        public Startup(IConfiguration configuration)
+        {
+            _configuration = configuration;
+        }
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton<IGreeter, Greeter>();
-            services.AddSingleton<IResturant, InMemoryResturant>();
+            services.AddDbContext<DataContext>
+                (opts => opts.UseSqlServer(_configuration.GetConnectionString("DefaultConnection")));
+            services.AddScoped<IResturant, SqlResturantData>();
             services.AddMvc(options => options.EnableEndpointRouting = false);
         }
 
