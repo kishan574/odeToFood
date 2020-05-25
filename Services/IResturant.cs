@@ -11,7 +11,6 @@ namespace ode2Food.Services
     {
         public IEnumerable<Resturant> GetAll();
         public Resturant Get(int id);
-
         public Resturant Add(Resturant resturant);
     }
 }
