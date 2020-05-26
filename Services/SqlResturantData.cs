@@ -10,9 +10,9 @@ namespace ode2Food.Services
 {
     public class SqlResturantData : IResturant
     {
-        private DataContext _context;
+        private OdeToFoodDbContext _context;
 
-        public SqlResturantData(DataContext context)
+        public SqlResturantData(OdeToFoodDbContext context)
         {
             _context = context;
         }

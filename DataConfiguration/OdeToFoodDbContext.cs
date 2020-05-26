@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace ode2Food.DataConfiguration
 {
-    public class DataContext : DbContext
+    public class OdeToFoodDbContext : DbContext
     {
-        public DataContext(DbContextOptions options) : base(options)
+        public OdeToFoodDbContext(DbContextOptions options) : base(options)
         {
             
         }

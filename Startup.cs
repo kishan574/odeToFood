@@ -31,15 +31,17 @@ namespace ode2Food
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton<IGreeter, Greeter>();
-            services.AddDbContext<DataContext>
+            services.AddDbContext<OdeToFoodDbContext>
                 (opts => opts.UseSqlServer(_configuration.GetConnectionString("DefaultConnection")));
-            services.AddScoped<IResturant, SqlResturantData>();
+            services.AddScoped<IResturant, InMemoryResturant>();
             services.AddMvc(options => options.EnableEndpointRouting = false);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IGreeter greeter, ILogger<Startup> logger)
         {
+            //var testConfigString = _configuration.GetConnectionString("DefaultConnection");
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
