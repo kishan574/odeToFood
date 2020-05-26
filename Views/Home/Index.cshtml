@@ -9,17 +9,24 @@
 
 <body>
     <h1>@Model.Greeter</h1>
-    <table>
-        @foreach (var m in Model.Resturants)
-        {
-            <tr>
-                <td>@m.Name is @m.Id</td>
-                <td> @Html.ActionLink("Go", "Details", new { id = m.Id })</td>
-                <td> <a asp-action="Details" asp-route-id="@m.Id">More details</a></td> <!-- asp core Tag Helpers -->
-            </tr>
+    @if (Model.Resturants.Any())
+    {
+        <table>
+            @foreach (var m in Model.Resturants)
+            {
+                <tr>
+                    <td>@m.Name is @m.Id</td>
+                    <td> @Html.ActionLink("Go", "Details", new { id = m.Id })</td>
+                    <td> <a asp-action="Details" asp-route-id="@m.Id">More details</a></td> <!-- asp core Tag Helpers -->
+                </tr>
 
-        }
-    </table>
+            }
+        </table>
+    }
+    else
+    {
+        <h3 style="color:darkred"> Data Table Empty. Add New Resturant. </h3>
+    }
 
     <a asp-action="Create"> Add Resturnat </a>
 

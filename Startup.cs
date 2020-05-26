@@ -33,7 +33,7 @@ namespace ode2Food
             services.AddSingleton<IGreeter, Greeter>();
             services.AddDbContext<OdeToFoodDbContext>
                 (opts => opts.UseSqlServer(_configuration.GetConnectionString("DefaultConnection")));
-            services.AddScoped<IResturant, InMemoryResturant>();
+            services.AddScoped<IResturant, SqlResturantData>();
             services.AddMvc(options => options.EnableEndpointRouting = false);
         }
 

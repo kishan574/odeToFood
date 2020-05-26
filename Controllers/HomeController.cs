@@ -61,7 +61,7 @@ namespace ode2Food
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
+        //[ValidateAntiForgeryToken]
         public IActionResult Create(ResturantEditModel resturantEdit)
         {
             if (ModelState.IsValid)
