@@ -17,6 +17,12 @@
             <select asp-for="CusineType" asp-items="@Html.GetEnumSelectList<ode2Food.Models.Cusine>()"></select>
             <span asp-validation-for="CusineType"></span>
         </div>
+        <div>
+            <label asp-for="Address"></label>
+            <input asp-for="Address" />
+            <span asp-validation-for="Address"></span>
+
+        </div>
         <input type="submit" value="Save" name="Save" />
     </form>
 </div>

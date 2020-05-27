@@ -14,5 +14,7 @@ namespace ode2Food.ViewModels
         public string Name { get; set; }
         [Required]
         public Cusine CusineType { get; set; }
+        [Required,MaxLength(80)]
+        public string Address { get; set; }
     }
 }

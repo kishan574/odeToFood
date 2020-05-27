@@ -16,6 +16,7 @@
             {
                 <tr>
                     <td>@m.Name is @m.Id</td>
+                    <td> @m.Address </td>
                     <td> @Html.ActionLink("Go", "Details", new { id = m.Id })</td>
                     <td> <a asp-action="Details" asp-route-id="@m.Id">More details</a></td> <!-- asp core Tag Helpers -->
                 </tr>

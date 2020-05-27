@@ -15,5 +15,8 @@ namespace ode2Food.Models
 
         [Display(Name = "Cusine")]
         public Cusine CusineType { get; set; }
+
+        [Display(Name = "Address")]
+        public string Address { get; set; }
     }
 }

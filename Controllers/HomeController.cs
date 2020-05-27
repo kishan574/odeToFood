@@ -6,6 +6,7 @@ using ode2Food.Services;
 using ode2Food.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
@@ -69,6 +70,7 @@ namespace ode2Food
                 Resturant newRresturant = new Resturant();
                 newRresturant.Name = resturantEdit.Name;
                 newRresturant.CusineType = resturantEdit.CusineType;
+                newRresturant.Address = resturantEdit.Address;
 
                 var a = _resturant.Add(newRresturant);
 
