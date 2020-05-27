@@ -138,3 +138,4 @@ C:\Users\Dell\source\repos\ode2Food\obj\Debug\netcoreapp3.1\staticwebassets\ode2
 C:\Users\Dell\source\repos\ode2Food\obj\Debug\netcoreapp3.1\ode2Food.dll
 C:\Users\Dell\source\repos\ode2Food\obj\Debug\netcoreapp3.1\ode2Food.pdb
 C:\Users\Dell\source\repos\ode2Food\obj\Debug\netcoreapp3.1\ode2Food.genruntimeconfig.cache
+C:\Users\Dell\source\repos\ode2Food\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
