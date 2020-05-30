@@ -141,3 +141,5 @@ C:\Users\Dell\source\repos\ode2Food\obj\Debug\netcoreapp3.1\ode2Food.genruntimec
 C:\Users\Dell\source\repos\ode2Food\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\Dell\source\repos\ode2Food\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
 C:\Users\Dell\source\repos\ode2Food\obj\Debug\netcoreapp3.1\Razor\Pages\Greeting.cshtml.g.cs
+C:\Users\Dell\source\repos\ode2Food\obj\Debug\netcoreapp3.1\Razor\Pages\_ViewImports.cshtml.g.cs
+C:\Users\Dell\source\repos\ode2Food\obj\Debug\netcoreapp3.1\Razor\Pages\_ViewStart.cshtml.g.cs
