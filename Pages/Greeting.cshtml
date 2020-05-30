@@ -1,6 +1,6 @@
 ﻿@page
 
-<div>
-    @DateTime.Now
-    Hello World!
-</div>
+@inject IGreeter Greeter 
+
+<div>Hello World!</div>
+<string> @Greeter.greetingsOfTheDay() </string>
