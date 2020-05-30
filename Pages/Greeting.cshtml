@@ -1,6 +1,11 @@
 ﻿@page
 
-@inject IGreeter Greeter 
+@*@inject IGreeter Greeter
+    using inject method may cause some security verneablity
+    thus we use model insted of inject
+*@ 
+
+@model GreetingModel
 
 <div>Hello World!</div>
-<string> @Greeter.greetingsOfTheDay() </string>
+<string> @Model.CurrentGreeting </string>
