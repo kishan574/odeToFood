@@ -12,15 +12,19 @@ namespace ode2Food.Pages.Resturants
     public class EditModel : PageModel
     {
         private SqlResturantData _resturantData;
-        private Resturant resturant;
+        public Resturant resturant;
 
         public EditModel(SqlResturantData resturantData)
         {
             _resturantData = resturantData;
         }
-        public void OnGet(int id)
+        public IActionResult OnGet(int id)
         {
             resturant = _resturantData.Get(id);
+            if (resturant == null)
+                return RedirectToAction("Index", "Home");
+
+                return Page();
         }
     }
 }

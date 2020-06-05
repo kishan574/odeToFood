@@ -1,7 +1,32 @@
 ﻿@page "{id}"
-@using ode2Food.Pages.Resturants 
+@using ode2Food.Pages.Resturants
 
 @model EditModel
 
-<h1>Edit</h1>
+<h1>Edit Resturant</h1>
 
+<a asp-action="Index" asp-controller="Home">Back</a>
+
+<div>
+    <form action="Create" method="post">
+        <div>
+            <label asp-for="@Model.resturant.Name"></label>
+            <input asp-for="@Model.resturant.Name" />
+            <span asp-validation-for="@Model.resturant.Name" style="color:red;"></span>
+        </div>
+        <div>
+            <label asp-for="@Model.resturant.CusineType"></label>
+            <select asp-for="@Model.resturant.CusineType" asp-items="@Html.GetEnumSelectList<ode2Food.Models.Cusine>()"></select>
+            <span asp-validation-for="@Model.resturant.CusineType"></span>
+        </div>
+        <div>
+            <label asp-for="@Model.resturant.Address"></label>
+            <input asp-for="@Model.resturant.Address" />
+            <span asp-validation-for="@Model.resturant.Address"></span>
+
+        </div>
+        <input type="submit" value="Save" name="Save" />
+    </form>
+</div>
+
+<a asp-action="Index" asp-controller="Home">Cancel</a>
