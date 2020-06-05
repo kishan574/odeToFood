@@ -144,3 +144,4 @@ C:\Users\Dell\source\repos\ode2Food\obj\Debug\netcoreapp3.1\Razor\Pages\Greeting
 C:\Users\Dell\source\repos\ode2Food\obj\Debug\netcoreapp3.1\Razor\Pages\_ViewImports.cshtml.g.cs
 C:\Users\Dell\source\repos\ode2Food\obj\Debug\netcoreapp3.1\Razor\Pages\_ViewStart.cshtml.g.cs
 C:\Users\Dell\source\repos\ode2Food\obj\Debug\netcoreapp3.1\Razor\Pages\_Layout.cshtml.g.cs
+C:\Users\Dell\source\repos\ode2Food\obj\Debug\netcoreapp3.1\Razor\Pages\Resturants\Edit.cshtml.g.cs
