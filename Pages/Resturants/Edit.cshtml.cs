@@ -23,7 +23,7 @@ namespace ode2Food.Pages.Resturants
         {
             resturant = _resturantData.Get(id);
             if (resturant == null)
-                return RedirectToAction("Index", "Home");
+                return Redirect("/home/index");
             else
                 return Page();
         }
