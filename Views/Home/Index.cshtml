@@ -2,7 +2,7 @@
 
 @{
     ViewBag.Title = "Home";
-   
+
 }
 
 <h1> Resturants Lists. </h1>
@@ -17,8 +17,7 @@
             <td> @m.Address </td>
             <td> @Html.ActionLink("Go", "Details", new { id = m.Id })</td>
             <td> <a asp-action="Details" asp-route-id="@m.Id">More details</a></td> <!-- asp core Tag Helpers -->
-            &nbsp;&nbsp;&nbsp;
-            <td> <a asp-page="/Resturants/Edit" asp-route-id="@m.Id"> Edit </a> </td>
+            <td> <a asp-page="/Resturants/Edit" > Edit </a> </td>
         </tr>
 
         }
@@ -31,7 +30,7 @@ else
 
 <div>
     @section footer{
-      Total Resturant Count is @Model.Resturants.Count()
+        Total Resturant Count is @Model.Resturants.Count()
     }
 </div>
 <div>
