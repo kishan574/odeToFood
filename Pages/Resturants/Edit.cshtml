@@ -6,8 +6,9 @@
 
 <h1>Edit Resturant</h1>
 
-<a asp-action="Index" asp-controller="Home">Back</a>
+@*<a asp-action="Index" asp-controller="Home">Back</a>*@
 
+<a href="/Home/Index"> Back </a>
 <div>
     <form action="Create" method="post">
         <div>
@@ -29,6 +30,3 @@
         <input type="submit" value="Save" name="Save" />
     </form>
 </div>
-
-<a asp-action="Index" asp-controller="Home">Cancel</a>
-
