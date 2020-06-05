@@ -24,8 +24,8 @@ namespace ode2Food.Pages.Resturants
             resturant = _resturantData.Get(id);
             if (resturant == null)
                 return Redirect("/home/index");
-            else
-                return Page();
+
+            return Page();
         }
 
         public IActionResult OnPost()
