@@ -13,7 +13,9 @@ namespace ode2Food.Pages.Resturants
     public class EditModel : PageModel
     {
         private IResturant _resturantData;
-        public Resturant resturant;
+        
+        [BindProperty]
+        public Resturant resturant { get; set; }
 
         public EditModel(IResturant resturantData)
         {
@@ -32,10 +34,11 @@ namespace ode2Food.Pages.Resturants
         {
             if (ModelState.IsValid)
             {
-
+                return Redirect("/Resturants/Edit?id=2");
             }
 
-            return Page();
+            return Redirect("/home/index");
+            //return Page();
         }
     }
 }
